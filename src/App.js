@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useRef } from 'react'
+import Navbar from './elements/Navbar'
+import Card from './elements/Card'
+import Footer from './elements/Footer'
+import cardData from './cardData'
+import './styles/App.css'
 
 function App() {
+
+  const cardRefs = useRef(cardData.map(() => React.createRef()))
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main">
+      <Navbar cards={cardData.map((card, index) => ({ ...card, ref: cardRefs.current[index] }))} />
+      {cardData.map((card, index) => (
+        <Card key={index}
+          ref={cardRefs.current[index]}
+          title={card.title}
+          description={card.description}
+          content={card.content}
+          image={card.image} />
+      ))}
+      <Footer />
     </div>
-  );
+  )
+
 }
 
-export default App;
+export default App

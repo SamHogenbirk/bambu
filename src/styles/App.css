@@ -1,0 +1,307 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+.navbar {
+  position: sticky;
+  z-index: 3;
+  top: 0;
+  width: 100%;
+  font-family: "Merriweather", sans-serif;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+}
+
+.navbar .logo {
+  font-size: 1.5em;
+}
+
+.navbar .menu {
+  list-style: none;
+  display: flex;
+  margin-right: 3%;
+  gap: 20px;
+}
+
+.navbar .menu-item {
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+body {
+  background-color: rgb(250, 250, 250);
+}
+
+.card {
+  z-index: 1;
+  width: 50%;
+  height: 530px;
+  margin: auto;
+  margin-bottom: 20px;
+  margin-top: 45px;
+  box-sizing: border-box;
+  transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+  border: 2px solid rgb(165, 238, 165);
+  border-radius: 10px;
+  border-color: rgb(174, 201, 87);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(110, 154, 66, 0.7);
+}
+.card .background {
+  pointer-events: none;
+  border-radius: 8px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+  z-index: -1;
+}
+.card .overlay {
+  position: absolute;
+  border-radius: 8px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, transparent 40%, rgba(255, 255, 255, 0.7) 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  pointer-events: none;
+}
+.card.enlarged {
+  flex-direction: column;
+  width: 95%;
+  height: 700px;
+  box-shadow: none;
+}
+.card.enlarged .overlay {
+  opacity: 1;
+}
+
+.card-title {
+  transition: top 0.5s ease-in-out;
+  top: 40%;
+  position: absolute;
+}
+.card-title.move {
+  top: 5px;
+}
+
+.card-content {
+  transform: translateY(-50px);
+  padding: 5px;
+}
+.card-content.move {
+  transform: translateY(0);
+}
+
+.content-wrapper {
+  position: unset;
+}
+
+.center-circle {
+  z-index: 2;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  transition: opacity 0.4s ease-in-out, width 0.45s linear, height 0.45s linear;
+  opacity: 0;
+  box-shadow: 0 8px 8px 1 black;
+}
+
+.visible {
+  opacity: 1;
+  width: 75%;
+  height: 130%;
+}
+
+.scrollable-content {
+  position: relative;
+  max-height: 600px;
+  width: calc(85% - 50px);
+  overflow-y: auto;
+  transition: opacity 0.35s ease-in;
+  opacity: 0;
+  margin: 70px auto 10px auto;
+  padding-bottom: 15px;
+  border: 0.5px solid rgb(174, 201, 87);
+  border-radius: 10px;
+  border-left: none;
+  border-right: none;
+}
+.scrollable-content.visible {
+  transition: opacity 0.5s ease-in;
+  opacity: 1;
+}
+
+.indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.dot {
+  height: 20px;
+  width: 20px;
+  background-color: rgb(174, 201, 87);
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 2px;
+  border: 0.5px solid rgb(174, 201, 87);
+}
+.dot.active {
+  background-color: white;
+}
+
+.controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transition: opacity 0.35s ease-in;
+  opacity: 0;
+  z-index: 1;
+}
+.controls button {
+  background-color: rgba(174, 201, 87, 0.4);
+  border-radius: 50%;
+  position: absolute;
+  width: 65px;
+  top: 0;
+}
+.controls button:first-child {
+  left: 5%;
+}
+.controls button:last-child {
+  right: 5%;
+}
+.controls.visible {
+  transition: opacity 0.35s ease-in;
+  opacity: 1;
+}
+
+.arrow-button {
+  border: none;
+  text-align: center;
+  display: inline-block;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  width: 50px;
+  height: 55px;
+}
+.arrow-button svg {
+  fill: none;
+  stroke: gray;
+  stroke-width: 0.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.arrow-button:hover svg {
+  stroke: white;
+  stroke-width: 1;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(174, 201, 87, 0.4);
+  border-radius: 50%;
+  text-align: center;
+  display: inline-block;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  width: 50px;
+  height: 55px;
+}
+.close-button svg {
+  fill: none;
+  stroke: gray;
+  stroke-width: 0.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.close-button:hover svg {
+  stroke: white;
+  stroke-width: 1;
+}
+
+.footer {
+  background: linear-gradient(to bottom, white, #333);
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.footer-content {
+  flex: 1;
+  padding-left: 20px;
+  border-radius: 10px;
+  border: solid white 1px;
+  border-right: 0px;
+}
+
+.footer-subscription {
+  padding-right: 20px;
+  padding-bottom: 5px;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: solid white 1px;
+  border-radius: 10px;
+  border-left: 0px;
+}
+
+.footer-subscription input {
+  margin-right: 10px;
+  padding: 10px;
+  width: 200px;
+}
+
+.footer-subscription button {
+  padding: 10px 20px;
+  color: white;
+  background-color: green;
+  border: none;
+  cursor: pointer;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}/*# sourceMappingURL=App.css.map */

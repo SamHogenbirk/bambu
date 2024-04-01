@@ -1,0 +1,23 @@
+//font links
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+//fonts:
+$font-H1: 'Montserrat', sans-serif;
+$font-H2: 'Lato', sans-serif;
+$font-mainText: 'Roboto', sans-serif;
+$font-menuItems: 'Merriweather', sans-serif;
+
+//border:
+$border: 2px solid rgb(165, 238, 165);
+
+//colors:
+$bamboo-green-dark: rgb(44, 103, 5);
+$bamboo-green-medium: rgb(83, 141, 26);
+$bamboo-green-light: rgb(110, 154, 66);
+$bamboo-green-main: rgb(174, 201, 87);
+$button-background: rgba(174, 201, 87, 0.4);
+$main-background: rgb(250, 250, 250);
+$black: #333;
