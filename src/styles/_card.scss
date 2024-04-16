@@ -5,6 +5,7 @@ body {
 }
 
 .card {
+
     z-index: 1;
     width: 50%;
     height: 530px;
@@ -24,6 +25,7 @@ body {
     box-shadow: 0 4px 8px 0 rgba(110, 154, 66, 0.7);
 
     .background {
+
         pointer-events: none;
         border-radius: 8px;
         position: absolute;
@@ -32,7 +34,6 @@ body {
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-        overflow: hidden;
         z-index: -1;
     }
 
@@ -55,6 +56,7 @@ body {
         width: 95%;
         height: 700px;
         box-shadow: none;
+        overflow: hidden;
 
         .overlay {
             opacity: 1;
@@ -72,6 +74,10 @@ body {
     }
 }
 
+.content-wrapper {
+    position: unset;
+}
+
 .card-content {
     transform: translateY(-50px);
     padding: 5px;
@@ -81,17 +87,12 @@ body {
     }
 }
 
-.content-wrapper {
-    position: unset;
-}
-
 .center-circle {
     z-index: 2;
     position: absolute;
-    // border: 0.5px solid $bamboo-green-dark;
     width: 30px;
     height: 30px;
-    background-color: white;
+    background-color: whitesmoke;
     border-radius: 50%;
     top: 50%;
     left: 50%;
@@ -99,24 +100,19 @@ body {
     opacity: 1;
     transition: opacity 0.4s ease-in-out, width 0.45s linear, height 0.45s linear;
     opacity: 0;
-    box-shadow: 0 8px 8px 1 black;
 
-}
+    &.visible {
+        opacity: 1;
+        width: 75%;
+        height: 130%;
+    }
 
-.visible {
-    opacity: 1;
-    width: 75%;
-    height: 130%;
 }
 
 
 .scrollable-content {
-    position: relative;
-    max-height: 600px;
-    width: calc(85% - 50px);
-    overflow-y: auto;
-    transition: opacity 0.35s ease-in;
-    opacity: 0;
+
+    max-width: 73%;
     margin: 70px auto 10px auto;
     padding-bottom: 15px;
     border: 0.5px solid $bamboo-green-main;
@@ -125,30 +121,40 @@ body {
     border-right: none;
 
     &.visible {
+
         transition: opacity 0.5s ease-in;
         opacity: 1;
     }
+
+}
+
+.content-container {
+
+    position: relative;
+    max-height: 300px;
+    overflow-y: auto;
 }
 
 .indicator {
-    position: absolute;
-    bottom: 0;
+
+    position: sticky;
+    bottom: -10;
     left: 0;
     right: 0;
     display: flex;
     justify-content: center;
-    margin-bottom: 10px;
 }
 
 .dot {
+
     height: 20px;
     width: 20px;
     background-color: $bamboo-green-main;
     border-radius: 50%;
     display: inline-block;
     margin: 0 2px;
-
     border: 0.5px solid $bamboo-green-main;
+
 
     &.active {
         background-color: white;
@@ -156,6 +162,7 @@ body {
 }
 
 .controls {
+
     position: absolute;
     top: 50%;
     left: 0;
@@ -163,7 +170,6 @@ body {
     transition: opacity 0.35s ease-in;
     opacity: 0;
     z-index: 1;
-
 
     button {
 

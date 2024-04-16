@@ -76,7 +76,6 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  overflow: hidden;
   z-index: -1;
 }
 .card .overlay {
@@ -96,6 +95,7 @@ body {
   width: 95%;
   height: 700px;
   box-shadow: none;
+  overflow: hidden;
 }
 .card.enlarged .overlay {
   opacity: 1;
@@ -110,6 +110,10 @@ body {
   top: 5px;
 }
 
+.content-wrapper {
+  position: unset;
+}
+
 .card-content {
   transform: translateY(-50px);
   padding: 5px;
@@ -118,16 +122,12 @@ body {
   transform: translateY(0);
 }
 
-.content-wrapper {
-  position: unset;
-}
-
 .center-circle {
   z-index: 2;
   position: absolute;
   width: 30px;
   height: 30px;
-  background-color: white;
+  background-color: whitesmoke;
   border-radius: 50%;
   top: 50%;
   left: 50%;
@@ -135,22 +135,15 @@ body {
   opacity: 1;
   transition: opacity 0.4s ease-in-out, width 0.45s linear, height 0.45s linear;
   opacity: 0;
-  box-shadow: 0 8px 8px 1 black;
 }
-
-.visible {
+.center-circle.visible {
   opacity: 1;
   width: 75%;
   height: 130%;
 }
 
 .scrollable-content {
-  position: relative;
-  max-height: 600px;
-  width: calc(85% - 50px);
-  overflow-y: auto;
-  transition: opacity 0.35s ease-in;
-  opacity: 0;
+  max-width: 73%;
   margin: 70px auto 10px auto;
   padding-bottom: 15px;
   border: 0.5px solid rgb(174, 201, 87);
@@ -163,14 +156,19 @@ body {
   opacity: 1;
 }
 
+.content-container {
+  position: relative;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
 .indicator {
-  position: absolute;
-  bottom: 0;
+  position: sticky;
+  bottom: -10;
   left: 0;
   right: 0;
   display: flex;
   justify-content: center;
-  margin-bottom: 10px;
 }
 
 .dot {
@@ -260,7 +258,6 @@ body {
 }
 
 .footer {
-  background: linear-gradient(to bottom, white, #333);
   color: black;
   display: flex;
   justify-content: space-between;
@@ -271,34 +268,10 @@ body {
   flex: 1;
   padding-left: 20px;
   border-radius: 10px;
-  border: solid white 1px;
+  border: solid rgb(174, 201, 87);
   border-right: 0px;
-}
-
-.footer-subscription {
-  padding-right: 20px;
-  padding-bottom: 5px;
-  flex: 1;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  border: solid white 1px;
-  border-radius: 10px;
-  border-left: 0px;
-}
-
-.footer-subscription input {
-  margin-right: 10px;
-  padding: 10px;
-  width: 200px;
-}
-
-.footer-subscription button {
-  padding: 10px 20px;
-  color: white;
-  background-color: green;
-  border: none;
-  cursor: pointer;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 body {

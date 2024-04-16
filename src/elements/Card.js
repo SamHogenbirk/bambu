@@ -65,7 +65,7 @@ const Card = React.forwardRef(({ title, content, image }, ref) => {
       </div>
 
       <div className={`overlay ${enlarged ? "visible" : ""}`}></div>
-      <h1 className={`card-title ${enlarged ? "move" : ""}`}>{title}</h1>
+      <h1 onClick={toggleEnlarge} className={`card-title ${enlarged ? "move" : ""}`}>{title}</h1>
 
       {showContent && (
 
@@ -77,8 +77,11 @@ const Card = React.forwardRef(({ title, content, image }, ref) => {
             </svg>
           </div>
 
-          <div className={`scrollable-content ${visible ? "visible" : ""}`}>
-            <p className={`card-content ${enlarged ? "move" : ""}`}>{content[contentIndex]}</p>
+          <div className='content-container'>
+            <div className={`scrollable-content ${visible ? "visible" : ""}`}>
+              <p className={`card-content ${enlarged ? "move" : ""}`}>{content[contentIndex]}</p>
+            </div>
+
             {content.length > 1 && (
 
               <div className="indicator">

@@ -1,19 +1,21 @@
 @import "./variables";
 
 .footer {
-    background: linear-gradient(to bottom, white, $black);
+
     color: black;
     display: flex;
     justify-content: space-between;
     padding: 20px;
+
 }
 
 .footer-content {
     flex: 1;
     padding-left: 20px;
     border-radius: 10px;
-    border: solid white 1px;
+    border: solid $bamboo-green-main;
     border-right: 0px;
+    height: fit-content;
 }
 
 // .socials {
@@ -26,28 +28,28 @@
 //     text-decoration: none;
 // }
 
-.footer-subscription {
-    padding-right: 20px;
-    padding-bottom: 5px;
-    flex: 1;
-    display: flex;
-    flex-direction: row; // Change this line
-    align-items: center; // Change this line
-    border: solid white 1px;
-    border-radius: 10px;
-    border-left: 0px;
-}
+// .footer-subscription {
+//     padding-right: 20px;
+//     padding-bottom: 5px;
+//     flex: 1;
+//     display: flex;
+//     flex-direction: row; // Change this line
+//     align-items: center; // Change this line
+//     border: solid white 1px;
+//     border-radius: 10px;
+//     border-left: 0px;
+// }
 
-.footer-subscription input {
-    margin-right: 10px; // Change this line
-    padding: 10px;
-    width: 200px;
-}
+// .footer-subscription input {
+//     margin-right: 10px; // Change this line
+//     padding: 10px;
+//     width: 200px;
+// }
 
-.footer-subscription button {
-    padding: 10px 20px;
-    color: white;
-    background-color: green;
-    border: none;
-    cursor: pointer;
-}
+// .footer-subscription button {
+//     padding: 10px 20px;
+//     color: white;
+//     background-color: green;
+//     border: none;
+//     cursor: pointer;
+// }
